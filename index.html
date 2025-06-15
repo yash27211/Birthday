@@ -71,11 +71,11 @@
       const msg = document.getElementById("msg");
 
       if (pin === correctPIN) {
-        fetch(`https://blynk.cloud/external/api/update?token=${AUTH_TOKEN}&V0=1`)
+        fetch(`https://blynk.cloud/external/api/update?token=${AUTH_TOKEN}&V1=1`)
           .then(() => {
             msg.textContent = "✅ Access Granted";
             setTimeout(() => {
-              fetch(`https://blynk.cloud/external/api/update?token=${AUTH_TOKEN}&V0=0`);
+              fetch(`https://blynk.cloud/external/api/update?token=${AUTH_TOKEN}&V1=0`);
               msg.textContent = "";  // Clear message after reset
             }, 5000);
           })
