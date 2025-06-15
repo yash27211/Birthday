@@ -1,0 +1,16 @@
+<input type="password" id="pinInput" maxlength="4" placeholder="Enter 4-digit PIN" />
+<button onclick="checkPIN()">Submit</button>
+
+<script>
+function checkPIN() {
+  const pin = document.getElementById('pinInput').value;
+  if (pin === "1234") {   // Your secret 4-digit PIN
+    // Call Blynk API to activate servo
+    fetch("https://blynk.cloud/external/api/update?token=Your_Blynk_Token&V1=1")
+      .then(() => alert("Access Granted!"))
+      .catch(() => alert("Error contacting Blynk."));
+  } else {
+    alert("Incorrect PIN");
+  }
+}
+</script>
